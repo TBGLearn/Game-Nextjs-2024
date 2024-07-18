@@ -75,7 +75,7 @@ export default function GameDetail({ data, similar }) {
                                                         href={href}
                                                         passHref
                                                     >
-                                                        <a className="ProductItem_productList__sA9IM">
+                                                        <div className="ProductItem_productList__sA9IM">
                                                             <div className="product-img overflow-hidden">
                                                                 <img
                                                                     alt={game.title}
@@ -92,7 +92,7 @@ export default function GameDetail({ data, similar }) {
                                                             <div className={styles.product_name}>
                                                                 {game.title}
                                                             </div>
-                                                        </a>
+                                                        </div>
                                                     </Link>
                                                 );
                                             })}

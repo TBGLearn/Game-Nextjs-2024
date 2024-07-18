@@ -22,7 +22,7 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
       <div className={styles.grid}>
         {data.map((item, index) => (
           <div key={index} className={styles.product_list}>
-            <Link href={`games/${item.slug}/${item.game_id}`}>
+            <Link href={`${item.slug}/${item.game_id}`}>
               <div className={styles.product_item}>
                 <div className={styles.product_image}>
                   {item.assets.length > 0 && (
