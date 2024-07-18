@@ -6,37 +6,36 @@ import "./HeaderStyle.css"; // Import the new CSS file
 import Link from 'next/link';
 
 function Header() {
-  const [expanded, setExpanded] = useState(false);
-  const [modalIsOpen, setIsOpen] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [game , setGame] = useState([])
 
-  const handleChange = (e) => console.log(e.target.value);
-  const handleClick1 = () => setExpanded(!expanded);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Email:', email, 'Password:', password);
-  };
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
 
-
-  useEffect(() =>{
-    fetch(`https://game.tbg95.com/api/game-list?`)
-    .then(res => res.json())
-    .then(data => {
-        setGame(data.data)
-    })
-  })
+  useEffect(() => {
+    // Chỉ gọi fetch khi searchQuery có giá trị
+    if (searchQuery.trim() !== '') {
+      console.log(searchQuery)
+      const url = `https://game.tbg95.com/api/game-search?q=${encodeURIComponent(searchQuery)}`
+      console.log(url)
+      fetch(`https://game.tbg95.com/api/game-search?q=${encodeURIComponent(searchQuery)}`)
+        .then(res => res.json())
+        .then(data => {
+          setGame(data.data);
+          console.log(data.data);
+        })
+        .catch(error => {
+          console.error('Error fetching games:', error);
+          setGame([]); // Xử lý lỗi bằng cách đặt setGame rỗng để không hiển thị danh sách
+        });
+    } else {
+      setGame([]); // Nếu searchQuery rỗng, đặt lại danh sách game rỗng
+    }
+  }, [searchQuery]);
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
-  const filteredGames = game.filter(game =>
-    game.title.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredGames = game.filter(game =>(searchQuery.toLowerCase())
   );
 
   
@@ -45,6 +44,10 @@ function Header() {
     <>
       <header className="header">
         <div className="container">
+             <Link href={'/'}>
+          <button className="home-button" >
+            Home</button>
+          </Link>
                 <input
               type="text"
               placeholder="Search for a game..."

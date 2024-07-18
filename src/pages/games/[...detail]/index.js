@@ -24,7 +24,6 @@ async function getData1() {
 async function getAllGameDetails() {
   const result = await getData1();
   const data = result.data;
-  console.log(data)
   return data.map(({ slug, game_id }) => ({ slug, game_id }));
 }
 

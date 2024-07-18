@@ -16,7 +16,7 @@ const GameList = ({ data, categories, pageActive, pageQuantity, onClickPage, onP
           {categories.map((item) => (
             <li key={item} style={{ marginBottom: '10px' }}>
               <button style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                <Link href={`/${item}`}>
+                <Link href={`/${item}`} style={{ textDecoration: 'none' , color : "black"}}>
                   <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{item}</span>
                 </Link>
               </button>
