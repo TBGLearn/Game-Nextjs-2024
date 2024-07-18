@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from 'next/router';
 import GameDetail from "@/components/GameDetail";
+import Layout from "@/layouts/Layout";
+import Head from "next/head";
 
 export const config = {
   unstable_runtimeJS: false
@@ -62,7 +64,12 @@ const generateRandomNumbers = () => {
 export default function Page({ data, similar }) {
   return (
     <>
-      <GameDetail data={data} similar={similar} />
+      <Head>
+        <title>{data.title}</title>
+      </Head>
+      <Layout>
+        <GameDetail data={data} similar={similar} />
+      </Layout>
     </>
   );
 }
