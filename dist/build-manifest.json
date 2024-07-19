@@ -15,10 +15,10 @@
     "static/chunks/main-app.js"
   ],
   "pages": {
-    "/[category]": [
+    "/": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/[category].js"
+      "static/chunks/pages/index.js"
     ],
     "/_app": [
       "static/chunks/webpack.js",
@@ -30,10 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/games": [
+    "/games/[...detail]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/games.js"
+      "static/chunks/pages/games/[...detail].js"
     ],
     "/games/[page]": [
       "static/chunks/webpack.js",

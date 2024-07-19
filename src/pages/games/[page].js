@@ -1,4 +1,3 @@
-// pages/games/[page].js
 import React from 'react';
 import GameList from '../../components/Games/index';
 import Head from 'next/head';
@@ -19,9 +18,8 @@ export async function getStaticProps({ params }) {
       initialData: result.data || [],
       initialCategories: result.categories || [],
       initialPageActive: pageActive,
-      initialPageQuantity: Math.ceil(result.totalPage || 0)
-    }
-    // Rebuild the page every 10 seconds if a request comes in
+      initialPageQuantity: Math.ceil(result.totalPage || 0),
+    },
   };
 }
 
@@ -74,19 +72,19 @@ export default function Games({ initialData, initialCategories, initialPageActiv
 
   return (
     <>
-    <Head>
-      <title>All OF GAME</title>
-      <meta name="description" content="Khám phá tất cả các trò chơi trên trang của chúng tôi với bộ sưu tập phong phú và đa dạng. Từ trò chơi hành động, phiêu lưu, đến các trò chơi trí tuệ, chúng tôi có mọi thứ bạn cần để giải trí và thư giãn." />
-    </Head>
-    <GameList
-      data={data}
-      categories={categories}
-      pageActive={pageActive}
-      pageQuantity={pageQuantity}
-      onClickPage={handleClickPage}
-      onPreviousPage={handlePreviousPage}
-      onNextPage={handleNextPage}
-    />
+      <Head>
+        <title>All OF GAME</title>
+        <meta name="description" content="Khám phá tất cả các trò chơi trên trang của chúng tôi với bộ sưu tập phong phú và đa dạng. Từ trò chơi hành động, phiêu lưu, đến các trò chơi trí tuệ, chúng tôi có mọi thứ bạn cần để giải trí và thư giãn." />
+      </Head>
+      <GameList
+        data={data}
+        categories={categories}
+        pageActive={pageActive}
+        pageQuantity={pageQuantity}
+        onClickPage={handleClickPage}
+        onPreviousPage={handlePreviousPage}
+        onNextPage={handleNextPage}
+      />
     </>
   );
 }

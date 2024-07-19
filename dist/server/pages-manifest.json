@@ -4,6 +4,5 @@
   "/_document": "pages/_document.js",
   "/games/[page]": "pages/games/[page].js",
   "/games/[...detail]": "pages/games/[...detail].js",
-  "/games": "pages/games.js",
-  "/[category]": "pages/[category].js"
+  "/": "pages/index.js"
 }
