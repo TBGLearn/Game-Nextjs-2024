@@ -8,6 +8,13 @@ export const config = {
   unstable_runtimeJS: false
 };
 
+const truncateDescription = (description, maxLength = 280) => {
+  if (description.length > maxLength) {
+    return `${description.substring(0, maxLength)}...`;
+  }
+  return description;
+};
+
 async function getData(slug, game_id) {
   try {
     const res = await fetch(`https://game.tbg95.com/api/game-detail?slug=${encodeURIComponent(slug)}&game_id=${encodeURIComponent(game_id)}`);
@@ -23,7 +30,7 @@ async function getData(slug, game_id) {
 
 async function getData1() {
   try {
-    const res = await fetch(`https://game.tbg95.com/api/game-list?page=0&perPage=500`);
+    const res = await fetch(`https://game.tbg95.com/api/game-list?page=0&perPage=10`);
     if (!res.ok) {
       throw new Error('Không thể lấy danh sách trò chơi');
     }
@@ -84,11 +91,12 @@ const generateRandomNumbers = () => {
 };
 
 export default function Page({ data, similar }) {
+  const description = truncateDescription(data.description);
   return (
     <>
       <Head>
         <title>{data.title}</title>
-        <meta name="description" content={data.description} />
+        <meta name="description" content={description} />
       </Head>
       <Layout>
         <GameDetail data={data} similar={similar} />

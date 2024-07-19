@@ -6,7 +6,7 @@
   }
   
   .col-3 {
-    display: flex;
+  display: flex;
   justify-content: center; /* Căn giữa nội dung theo chiều ngang */
   grid-column: span 1; 
   }

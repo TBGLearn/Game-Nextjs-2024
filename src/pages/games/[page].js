@@ -4,6 +4,11 @@ import GameList from '../../components/Games/index';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+export const config = {
+  unstable_runtimeJS: false
+};
+
+
 async function getData(pageActive, limit) {
   const res = await fetch(`https://game.tbg95.com/api/game-list?page=${pageActive}&perPage=${limit}`);
   return res.json();
@@ -19,7 +24,7 @@ export async function getStaticProps({ params }) {
       initialData: result.data || [],
       initialCategories: result.categories || [],
       initialPageActive: pageActive,
-      initialPageQuantity: Math.ceil(result.totalPage || 0)
+      initialPageQuantity: 10
     }
     // Rebuild the page every 10 seconds if a request comes in
   };
@@ -28,7 +33,8 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const res = await fetch(`https://game.tbg95.com/api/game-list?page=0&perPage=1`);
   const result = await res.json();
-  const totalPages = Math.ceil(result.totalPage || 0);
+  // const totalPages = Math.ceil(result.totalPage || 0);
+  const totalPages = 10;
 
   const paths = Array.from({ length: totalPages }, (_, i) => ({
     params: { page: (i + 1).toString() },
@@ -75,8 +81,8 @@ export default function Games({ initialData, initialCategories, initialPageActiv
   return (
     <>
     <Head>
-      <title>Games</title>
-      <meta name="description" content="All Game" />
+      <title>All OF GAME</title>
+      <meta name="description" content="Khám phá tất cả các trò chơi trên trang của chúng tôi với bộ sưu tập phong phú và đa dạng. Từ trò chơi hành động, phiêu lưu, đến các trò chơi trí tuệ, chúng tôi có mọi thứ bạn cần để giải trí và thư giãn." />
     </Head>
     <GameList
       data={data}
