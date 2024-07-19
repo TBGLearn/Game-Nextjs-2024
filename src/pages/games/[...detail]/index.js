@@ -9,20 +9,36 @@ export const config = {
 };
 
 async function getData(slug, game_id) {
-  const res = await fetch(`https://game.tbg95.com/api/game-detail?slug=${encodeURIComponent(slug)}&game_id=${encodeURIComponent(game_id)}`);
-  if (!res.ok) {
-    throw new Error('Failed to fetch data');
+  try {
+    const res = await fetch(`https://game.tbg95.com/api/game-detail?slug=${encodeURIComponent(slug)}&game_id=${encodeURIComponent(game_id)}`);
+    if (!res.ok) {
+      throw new Error(`Không thể lấy dữ liệu cho slug: ${slug}, game_id: ${game_id}`);
+    }
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    return null;
   }
-  return res.json();
 }
 
 async function getData1() {
-  const result = await fetch(`https://game.tbg95.com/api/game-list?page=0&perPage=1000`);
-  return result.json();
+  try {
+    const res = await fetch(`https://game.tbg95.com/api/game-list?page=0&perPage=500`);
+    if (!res.ok) {
+      throw new Error('Không thể lấy danh sách trò chơi');
+    }
+    return res.json();
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 }
 
 async function getAllGameDetails() {
   const result = await getData1();
+  if (!result) {
+    return [];
+  }
   const data = result.data;
   return data.map(({ slug, game_id }) => ({ slug, game_id }));
 }
@@ -40,6 +56,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const [slug, game_id] = params.detail;
   const data = await getData(slug, game_id);
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
 
   const similar = generateRandomNumbers();
 
@@ -66,6 +88,7 @@ export default function Page({ data, similar }) {
     <>
       <Head>
         <title>{data.title}</title>
+        <meta name="description" content={data.description} />
       </Head>
       <Layout>
         <GameDetail data={data} similar={similar} />

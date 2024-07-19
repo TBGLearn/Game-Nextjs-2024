@@ -20,8 +20,8 @@ export async function getStaticProps({ params }) {
       initialCategories: result.categories || [],
       initialPageActive: pageActive,
       initialPageQuantity: Math.ceil(result.totalPage || 0)
-    },
-    revalidate: 10 // Rebuild the page every 10 seconds if a request comes in
+    }
+    // Rebuild the page every 10 seconds if a request comes in
   };
 }
 
@@ -34,7 +34,7 @@ export async function getStaticPaths() {
     params: { page: (i + 1).toString() },
   }));
 
-  return { paths, fallback: 'blocking' };
+  return { paths, fallback: false };
 }
 
 export default function Games({ initialData, initialCategories, initialPageActive, initialPageQuantity }) {
@@ -76,6 +76,7 @@ export default function Games({ initialData, initialCategories, initialPageActiv
     <>
     <Head>
       <title>Games</title>
+      <meta name="description" content="All Game" />
     </Head>
     <GameList
       data={data}

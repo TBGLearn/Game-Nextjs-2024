@@ -1,8 +1,10 @@
 import React from 'react';
-import AllGame from '@/components/Games/AllGame';
 import Layout from '@/layouts/Layout';
-import Head from 'next/head';
 import fetch from 'isomorphic-unfetch';
+import GameOfCate from '@/components/GameOfCate';
+import { Metadata } from 'next';
+import Head from 'next/head';
+
 
 export const config = {
   unstable_runtimeJS: false
@@ -45,8 +47,7 @@ export async function getStaticProps({ params }) {
       initialPageActive: pageActive,
       initialPageQuantity: Math.ceil(result.totalPage || 0),
       category
-    },
-    revalidate: 10
+    }
   };
 }
 
@@ -81,20 +82,18 @@ export default function Category({ initialData, initialPageActive, initialPageQu
   };
 
   return (
-    <>
-    <Head>
-      <title>{category}</title>
-    </Head>
     <Layout>
-      <AllGame
-      data={data}
-      pageActive={pageActive}
-      pageQuantity={pageQuantity}
-      onClickPage={handleClickPage}
-      onPreviousPage={handlePreviousPage}
-      onNextPage={handleNextPage}
-    />
+      <Head>
+        <title>{category} Games</title>
+      </Head>
+      <GameOfCate
+        data={data}
+        pageActive={pageActive}
+        pageQuantity={pageQuantity}
+        onClickPage={handleClickPage}
+        onPreviousPage={handlePreviousPage}
+        onNextPage={handleNextPage}
+      />
     </Layout>
-    </>
   );
 }
