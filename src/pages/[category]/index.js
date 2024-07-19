@@ -85,6 +85,7 @@ export default function Category({ initialData, initialPageActive, initialPageQu
     <Layout>
       <Head>
         <title>{category} Games</title>
+        <meta name="description" content={`Khám phá danh mục ${category} với hàng ngàn trò chơi thú vị! Chúng tôi cung cấp các trò chơi mới nhất và phổ biến nhất trong danh mục này để bạn có thể dễ dàng tìm thấy trò chơi yêu thích của mình và tận hưởng những trải nghiệm tuyệt vời. `} />
       </Head>
       <GameOfCate
         data={data}

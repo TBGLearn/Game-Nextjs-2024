@@ -75,8 +75,8 @@ export default function Games({ initialData, initialCategories, initialPageActiv
   return (
     <>
     <Head>
-      <title>Games</title>
-      <meta name="description" content="All Game" />
+      <title>All OF GAME</title>
+      <meta name="description" content="Khám phá tất cả các trò chơi trên trang của chúng tôi với bộ sưu tập phong phú và đa dạng. Từ trò chơi hành động, phiêu lưu, đến các trò chơi trí tuệ, chúng tôi có mọi thứ bạn cần để giải trí và thư giãn." />
     </Head>
     <GameList
       data={data}
