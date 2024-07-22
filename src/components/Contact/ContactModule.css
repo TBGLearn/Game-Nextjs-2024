@@ -1,0 +1,11 @@
+.Test{
+    color: red ;
+    font-weight: 900;
+}
+.test{
+    color: royalblue;
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: 900 ;
+    font-size : 100px
+}

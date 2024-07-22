@@ -45,6 +45,7 @@
     overflow: hidden; /* Ẩn phần văn bản tràn ra */
     text-overflow: ellipsis; /* Hiển thị dấu chấm lửng cho văn bản bị cắt */
     padding: 1px;
+    margin: 2px;
   }
   
   .Pagination {
