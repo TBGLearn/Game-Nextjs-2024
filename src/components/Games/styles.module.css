@@ -27,20 +27,24 @@
   
   .product_item {
     border: 1px solid #ddd; /* Light grey border */
-    padding: 10px;
+    padding: 3px;
     border-radius: 5px; /* Rounded corners */
   }
   
-  .product_image img {
+  .product_image Image {
     width: 100%; /* Make image fill the container width */
     height: 200px; /* Set a fixed height for all images */
     object-fit: cover; /* Resize the image to maintain its aspect ratio while filling the element's entire content box */
     border-radius: 5px; /* Rounded corners for images */
+    padding: auto;
   }
   
   .product_title {
-    margin-top: 10px;
-    text-align: center;
+    max-width: 200px;
+    white-space: nowrap; /* Đảm bảo văn bản không xuống dòng */
+    overflow: hidden; /* Ẩn phần văn bản tràn ra */
+    text-overflow: ellipsis; /* Hiển thị dấu chấm lửng cho văn bản bị cắt */
+    padding: 1px;
   }
   
   .Pagination {

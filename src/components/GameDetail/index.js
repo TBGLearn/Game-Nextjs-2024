@@ -118,7 +118,6 @@ export default function GameDetail({ data, similar }) {
           <div className="box">
             <div className="flex flex-wrap justify-between items-center gap-5 mb-6">
               <div className="flex text-lg font-medium gap-3 items-center">
-                <Image className="h-5" src="/assets/eyes.png" alt="eyes" />{" "}
                 <span>33 Views</span>
               </div>
               <div className="flex flex-col md:flex-row justify-end gap-4 max-sm:w-full max-sm:order-last">
@@ -220,24 +219,6 @@ export default function GameDetail({ data, similar }) {
                 </svg>
                 Download
               </button>
-            </div>
-            <div className="games_gameThumnailImage__eM2Tb grid gap-4">
-              <div className="one">
-                <Image
-                  alt="46dc46bb1d6341bda2b509e69a094ac4-512x384.jpg"
-                  
-                />
-              </div>
-              <div className="two">
-                <Image
-                  alt="46dc46bb1d6341bda2b509e69a094ac4-512x512.jpg"
-                />
-              </div>
-              <div className="three">
-                <Image
-                  alt="46dc46bb1d6341bda2b509e69a094ac4-200x120.jpg"
-                />
-              </div>
             </div>
           </div>
         </div>

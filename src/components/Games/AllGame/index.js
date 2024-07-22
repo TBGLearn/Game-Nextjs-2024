@@ -27,10 +27,10 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
               <div className={styles.product_item}>
                 <div className={styles.product_image}>
                   {item.assets.length > 0 && (
-                    <Image src={`${item.img_path}${item.assets[0].name}`} alt="" />
+                    <Image src={`${item.img_path}${item.assets[0].name}`} alt="" style={{width : "100%" , height : "150px"}} width={200} height={100}/>
                   )}
                 </div>
-                <h3 className={styles.product_title}>{item.title}</h3>
+                <h3 className={styles.product_title}><b>{item.title}</b></h3>
               </div>
             </Link>
           </div>
