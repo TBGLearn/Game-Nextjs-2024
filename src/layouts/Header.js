@@ -110,7 +110,11 @@ function Header() {
                   onClick={() => window.location.href = `/games/${game.slug}/${game.game_id}`} 
                   key={game.game_id}
                 >
-                <Image src={`${game.img_path}${game.assets[0].name}`}  style={{ width: '50px', height: 'auto', marginRight: '10px' }} alt="Game" />
+                <Image src={`${game.img_path}${game.assets[0].name}`} 
+                 style={{ width: '50px', height: 'auto', marginRight: '10px' }} 
+                alt="Game" 
+                width={100}
+                height={100}/>
                 {game.title}
               </button>
                 ))}
