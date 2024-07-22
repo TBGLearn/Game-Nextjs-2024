@@ -30,7 +30,7 @@ async function getData(slug, game_id) {
 
 async function getData1() {
   try {
-    const res = await fetch(`https://game.tbg95.com/api/game-list?page=0&perPage=500`);
+    const res = await fetch(`https://game.tbg95.com/api/game-list?page=0&perPage=10`);
     if (!res.ok) {
       throw new Error('Không thể lấy danh sách trò chơi');
     }

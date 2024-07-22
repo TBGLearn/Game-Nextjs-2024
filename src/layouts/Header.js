@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import "./HeaderStyle.css"; // Import the new CSS file
 import Link from 'next/link';
+import Image from 'next/image';
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -91,9 +92,6 @@ function Header() {
           <button className="login-button" >
             Games</button>
           </Link>
-        <a target="blank" className="" href="https://blog.gamedistribution.com">
-          News
-        </a>
       </nav>
       <div className="header_searchGame__jvUKH" data-headlessui-state="">
         <div className="input-box">
@@ -112,7 +110,7 @@ function Header() {
                   onClick={() => window.location.href = `/games/${game.slug}/${game.game_id}`} 
                   key={game.game_id}
                 >
-                <img src={`${game.img_path}${game.assets[0].name}`}  style={{ width: '50px', height: 'auto', marginRight: '10px' }} alt="Game" />
+                <Image src={`${game.img_path}${game.assets[0].name}`}  style={{ width: '50px', height: 'auto', marginRight: '10px' }} alt="Game" />
                 {game.title}
               </button>
                 ))}

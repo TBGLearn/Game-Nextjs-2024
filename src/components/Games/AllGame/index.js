@@ -1,6 +1,7 @@
 // components/AllGame.js
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from '../../Games/styles.module.css'; 
 export default function AllGame({ data, pageActive, pageQuantity, onClickPage, onPreviousPage, onNextPage }) {
     const getVisiblePages = () => {
@@ -26,7 +27,7 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
               <div className={styles.product_item}>
                 <div className={styles.product_image}>
                   {item.assets.length > 0 && (
-                    <img src={`${item.img_path}${item.assets[0].name}`} alt="" />
+                    <Image src={`${item.img_path}${item.assets[0].name}`} alt="" />
                   )}
                 </div>
                 <h3 className={styles.product_title}>{item.title}</h3>

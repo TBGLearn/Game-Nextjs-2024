@@ -6677,3 +6677,28 @@ body .page-container {
   height: 100%;
   line-height: 2.5rem; /* Center text vertically */
 }
+
+.games_searchInput__3kX7E {
+  width: 100%;
+  border-radius: 1.5rem;
+  padding: .75rem 2rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(59 33 204/var(--tw-text-opacity))
+}
+
+.games_searchInput__3kX7E::-moz-placeholder {
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(59 33 204/var(--tw-text-opacity))
+}
+
+.games_searchInput__3kX7E::placeholder {
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(59 33 204/var(--tw-text-opacity))
+}
+
+.games_searchInput__3kX7E:focus {
+  outline: none
+}
