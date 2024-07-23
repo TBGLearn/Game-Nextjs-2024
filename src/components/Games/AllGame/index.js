@@ -64,7 +64,10 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
       <div className="Pagination_pagination__7R_fc">
       <a className="pagination-button prev-button"
           onClick={onPreviousPage}
-          style={{backgroundColor: "red"}}
+          style={{backgroundColor: pageActive === 0 ? '#fff' : 'blue',
+                  opacity : pageActive === 0 ? '0.5' : '1' ,
+                  width : '60px' , height : '40px' , borderRadius : '30px'
+          }}
           >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +88,9 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
             <li
               key={index}
               onClick={() => onClickPage(index)}
-              className={`${index === pageActive ? styles.active : ''} ${styles.paginationItem}`}
-              style={{ backgroundColor: index === pageActive ? 'blue' : '#fff',}}
+              className={`${index === pageActive ? 'active' : ''}`}
+              style={{ 
+              }}
             >
               <button>{index + 1}</button>
             </li>
@@ -94,7 +98,10 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
       </ul>
       <a className="pagination-button next-button "
         onClick={onNextPage}
-        style={{backgroundColor: "red"}}
+        style={{backgroundColor: pageActive === pageQuantity - 1 ? '#fff' : 'blue',
+                opacity : pageActive === pageQuantity - 1 ? '0.5' : '1' ,
+                width : '60px' , height : '40px' , borderRadius : '30px'
+        }}
         >
 
         <svg

@@ -36,35 +36,9 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
           </div>
         ))}
       </div>
-      {/* <div className={styles.Pagination}>
-        <ul className={styles.paginationList}>
-          <li
-            onClick={onPreviousPage}
-            className={`${pageActive === 0 ? styles.disabled : ''} ${styles.paginationItem}`}
-          >
-            <button className={styles.prevButton}>«</button>
-          </li>
-          {visiblePages.map((index) => (
-            <li
-              key={index}
-              onClick={() => onClickPage(index)}
-              className={`${index === pageActive ? styles.active : ''} ${styles.paginationItem}`}
-            >
-              <button>{index + 1}</button>
-            </li>
-          ))}
-          <li
-            onClick={onNextPage}
-            className={`${pageActive === pageQuantity - 1 ? styles.disabled : ''} ${styles.paginationItem}`}
-          >
-            <button className={styles.nextButton}>»</button>
-          </li>
-        </ul>
-      </div> */}
       <div className="Pagination_pagination__7R_fc">
       <a className="pagination-button prev-button"
           onClick={onPreviousPage}
-          style={{backgroundColor: "red"}}
           >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +60,9 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
               key={index}
               onClick={() => onClickPage(index)}
               className={`${index === pageActive ? styles.active : ''} ${styles.paginationItem}`}
-              style={{ backgroundColor: index === pageActive ? 'blue' : '#fff',}}
+              style={{ backgroundColor: index === pageActive ? 'blue' : '#fff', 
+              color: index === pageActive ? '#fff' : '#000'
+              }}
             >
               <button>{index + 1}</button>
             </li>
@@ -94,7 +70,6 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
       </ul>
       <a className="pagination-button next-button "
         onClick={onNextPage}
-        style={{backgroundColor: "red"}}
         >
 
         <svg

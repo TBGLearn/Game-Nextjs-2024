@@ -6611,7 +6611,7 @@ body .page-container {
   width: 2.5rem; /* Adjust size */
   height: 2.5rem; /* Adjust size */
   border: 1px solid #ddd; /* Border color */
-  border-radius: 0.375rem; /* Rounded corners */
+  border-radius: 50%; /* Rounded corners */
   margin: 0 0.25rem; /* Spacing between buttons */
   cursor: pointer;
   background-color: #fff; /* Background color */
@@ -6627,6 +6627,43 @@ body .page-container {
 .pagination-button.disabled {
   cursor: not-allowed;
   opacity: 0.5; /* Make it look disabled */
+}
+
+.next-button {
+    background-color: blue;
+    position: relative;
+    bottom: 10px;
+    margin-left: 10px;
+}
+
+.prev-button {
+  background-color: blue;
+  position: relative;
+  bottom: 10px;
+  margin-right: 10px;
+}
+
+.icon {
+  fill: currentColor;
+}
+
+.pagination-button:hover .icon {
+  fill: white;
+}
+
+.number-buttons{
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ddd;
+  height: 40px;
+  border-radius: 30px;
+  background-color: white;
+  position: relative;
+  bottom: 10px;
+  color: #5477e4;
+  font-weight: 600;
 }
 
 /* SVG icons inside the buttons */
@@ -6650,24 +6687,22 @@ body .page-container {
   justify-content: center;
   width: 2.5rem; /* Adjust size */
   height: 2.5rem; /* Adjust size */
-  border: 1px solid #ddd; /* Border color */
-  border-radius: 0.375rem; /* Rounded corners */
-  margin: 0 0.25rem; /* Spacing between numbers */
-  cursor: pointer;
-  background-color: #fff; /* Background color */
-  transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
 }
 
 .number-buttons li.active {
   background-color: blue; /* Background color for active page */
-  color: #fff; /* Text color for active page */
-  border-color: #333; /* Border color for active page */
+  width: 40px;
+  height: 60px;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  bottom: 10px;
+  color: white;
+  
 }
 
-.number-buttons li:hover {
-  background-color: #f0f0f0; /* Background color on hover */
-  border-color: #bbb; /* Border color on hover */
-}
 
 .number-buttons li a {
   text-decoration: none;
@@ -6702,3 +6737,4 @@ body .page-container {
 .games_searchInput__3kX7E:focus {
   outline: none
 }
+

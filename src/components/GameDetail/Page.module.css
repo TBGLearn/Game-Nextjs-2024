@@ -68,3 +68,7 @@
     flex: 2;
     /* Thêm các thuộc tính khác như padding, margin nếu cần */
   }
+  .box {
+    background-color: #b91c1c;
+   
+  }

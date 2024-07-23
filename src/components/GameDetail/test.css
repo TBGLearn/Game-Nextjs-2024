@@ -1,0 +1,38 @@
+.box{
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+}
+.flex-wrap {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+
+.row {
+    display: flex;
+    align-items: center; /* Canh giữa theo chiều dọc */
+    padding-bottom: 10px; /* Khoảng cách bên trong */
+    margin-bottom: 10px; /* Khoảng cách phía dưới */
+    border-bottom: 1px solid #ddd; /* Đường viền */
+    border-radius: 5px; /* Bo góc */
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-1 {
+    flex: 1; /* Chiếm toàn bộ chiều rộng còn lại */
+  }
+  
+  .font-semibold {
+    font-weight: 600; /* Đặt font đậm hơn bình thường */
+  }
+  
+  .pl-1 {
+    padding-left: 4px; /* Khoảng cách bên trái */
+  }
+  

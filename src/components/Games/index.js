@@ -1,5 +1,5 @@
 // components/GameList.js
-import React, { useState , useEffect} from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import styles from './styles.module.css';
 import Layout from '@/layouts/Layout';
