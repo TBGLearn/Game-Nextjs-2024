@@ -27,7 +27,8 @@ const GameList = ({ data, categories, pageActive, pageQuantity, onClickPage, onP
         <div className="w-0 lg:w-auto relative">
           <div className="sidebar_sideMenu__3Y1q9 ">
             <form className="lg:!mx-0">
-              <div className="font-semibold text-2xl text-interdimensional relative">
+              <div className="font-semibold text-2xl text-interdimensional relative"
+                style={{paddingTop:"20px"}}>
                 Filters
               </div>
               <div className="flex flex-col mt-9 relative">
@@ -89,9 +90,10 @@ const GameList = ({ data, categories, pageActive, pageQuantity, onClickPage, onP
           </div>
         </div>
         <div className="flex-1">
-       <h2 className="font-semibold text-2xl text-interdimensional">Games</h2> 
+       <h2 className="font-semibold text-2xl text-interdimensional" style={{paddingTop : "27px"}}>Games</h2> 
        <div className="flex flex-1 max-xs:flex-wrap gap-4 sm:justify-end sm:items-end min-w-fit">
-            <div className="flex max-sm:w-full sm:flex-1 max-w-[470px] relative">
+            <div className="flex max-sm:w-full sm:flex-1 max-w-[470px] relative"
+            style={{marginBottom : "0px" , top : "-30px", right : "250px"}}>
               <input className="games_searchInput__3kX7E" 
               placeholder="Search Games" 
               value={searchQuery}

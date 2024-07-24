@@ -42,54 +42,18 @@ function Header() {
   
 
   return (
-    <>
-      {/* <header className="header">
-        <div className="container">
-             <Link href={'/'}>
-          <button className="home-button" >
-            Home</button>
-          </Link>
-                <input
-              type="text"
-              placeholder="Search for a game..."
-              value={searchQuery}
-              onChange={handleSearchChange}
-            />
-          <div>
-          {searchQuery && (filteredGames.length > 0 ? (
-              <ul>
-                {filteredGames.map((game) => (
-                  <button 
-                  style={{ display: 'flex', alignItems: 'center', margin: '10px 0' }}
-                  onClick={() => window.location.href = `/games/${game.slug}/${game.game_id}`} 
-                  key={game.game_id}
-                >
-                <img src={`${game.img_path}${game.assets[0].name}`}  style={{ width: '50px', height: 'auto', marginRight: '10px' }} alt="Game" />
-                {game.title}
-              </button>
-                ))}
-              </ul>
-            ) : (
-              <p>No games found</p>
-            ))}
-          </div>
-          <Link href={'/games'}>
-          <button className="login-button" >
-            Games</button>
-          </Link>
-        </div>
-      </header> */}
-
+    <> 
   <header className="header_header__rj0C7  ">
   <div className="container mx-auto flex justify-between items-center gap-x-2">
      <Link href={'/'}>
-          <button className="home-button" >
-            Home</button>
+          <Image src="https://png.pngtree.com/png-clipart/20220530/ourmid/pngtree-dragon-head-logo-gaming-png-image_4759084.png" alt="Logo"
+           width={100} height={100}  style={{width:"100px" , height: "60px"}}/>
       </Link>
     <div className="flex max-lg:gap-4 lg:gap-14 items-center">
       <nav className="navigation ">
        <Link href={'/games'}>
-          <button className="login-button" >
+          <button className="login-button" 
+          style={{fontWeight:"900", color :"black"}}>
             Games</button>
           </Link>
       </nav>
