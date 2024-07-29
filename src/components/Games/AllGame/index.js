@@ -42,7 +42,8 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
           onClick={onPreviousPage}
           style={{backgroundColor: pageActive === 0 ? '#fff' : 'blue',
                   opacity : pageActive === 0 ? '0.5' : '1' ,
-                  width : '60px' , height : '40px' , borderRadius : '30px'
+                  width : '60px' , height : '40px' , borderRadius : '30px',
+                  color : "white"
           }}
           >
         <svg
@@ -51,11 +52,13 @@ export default function AllGame({ data, pageActive, pageQuantity, onClickPage, o
           fill="currentColor"
           aria-hidden="true"
           data-slot="icon"
+          style={{color : "white"}}
         >
           <path
             fillRule="evenodd"
             d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z"
             clipRule="evenodd"
+            style={{color : "white"}}
           />
         </svg>
       </a>
